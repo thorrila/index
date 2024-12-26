@@ -1,101 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Stærðfræðigreining III</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Stærðfræðigreining III - Glósur</title>
 </head>
 <body>
     <h1>Stærðfræðigreining III - Glósur</h1>
 
-    <h2>1. Sérstöðupunktar og Leifareikningur</h2>
+    <h2>1. Tvinntölur</h2>
     <p>
-        Sérstöðupunktar eru þar sem fall \( f(z) \) annaðhvort verður ósamfellt eða óskilgreint. Til að leysa dæmi um sérstöðupunkta, þarftu að:
-    </p>
-    <ul>
-        <li><b>Finna sérstöðupunkta:</b> Finndu þá \( z \) sem valda því að \( f(z) \) er ekki skilgreint. Notaðu þáttun eða deilireglur til að greina brotin.</li>
-        <li><b>Greina gerð sérstöðupunkts:</b>
-            <ul>
-                <li><b>Afmáanlegur:</b> Ef þú getur "lagfært" punktinn með því að bæta við gildi.</li>
-                <li><b>Skaut:</b> Fallið fer á óendanlegt í punktinum. Skaut hafa stig, \( m \), sem segir hversu hratt það fer á óendanlegt.</li>
-                <li><b>Verulegur:</b> Sérstöðupunktur þar sem fallið sveiflast óendanlega nálægt punktinum.</li>
-            </ul>
-        </li>
-    </ul>
-    <p><b>Dæmi:</b> Greinum \( f(z) = \frac{z^2}{(z^2+1)^2} \):</p>
-    <p>
-        Sérstöðupunktar eru \( z^2 + 1 = 0 \), þ.e. \( z = i \) og \( z = -i \). Báðir punktar eru skaut, því fallið fer á óendanlegt í þeim.
-        <br> Stig skautanna: \( z=i \) er af stigi 2, því þegar þú skrifar \( f(z) = \frac{z^2}{(z-i)^2(z+i)^2} \), er nefnarinn \( (z-i)^2 \) í \( z=i \).
-    </p>
-    <p><b>Leif:</b> Notaðu:
-        \[
-        \text{Res}(f, i) = \lim_{z \to i} \frac{d}{dz}\left((z-i)^2 \cdot \frac{z^2}{(z^2+1)^2}\right) = \frac{i}{4i^3} = \frac{1}{4}.
-        \]
+        Tvinntölur eru stærðfræðileg útvíkkun á rauntölum sem gera kleift að vinna með stærðir sem hafa bæði raunverulegan og ímyndaðan hluta. Þær eru skrifaðar á forminu \( z = x + yi \), þar sem \( x \) er raunhlutinn og \( y \) er ímyndaði hlutinn. Ímynduð eining, táknuð sem \( i \), er skilgreind þannig að \( i^2 = -1 \). Með þessari skilgreiningu má lýsa mörgum stærðfræðilegum og verkfræðilegum ferlum á flóknari hátt en með rauntölum einum saman. Tvinntölur eru grunneining í tvinntalnagreiningu og hafa mikilvægar tengingar við hringhreyfingar, bylgjujöfnur og sveiflur í raunheimi.
     </p>
     <p>
-        <b>Leifasetningin:</b> Heildaðu \( \int_{-\infty}^\infty f(x) dx \) með því að nota hálfplanaferil. Línuheildin er jafngild:
-        \[
-        2\pi i \left(\sum \text{Res}(f, \text{sérstöðupunktar í efra hálfplani})\right).
-        \]
+        Geometrískt má túlka tvinntölur sem punkta á tvinntalnaplani, þar sem \( x \)-ásinn táknar raunhlutann og \( y \)-ásinn táknar ímyndaða hlutann. Lengd tvinntölu, kölluð norm, er reiknuð sem \( |z| = \sqrt{x^2 + y^2} \), og hún lýsir fjarlægð punktsins \( z \) frá upphafspunktinum. Hornið \( \theta \), sem tvinntalan myndar við jákvæða \( x \)-ásinn, er kallað vigurhorn hennar og er reiknað sem \( \tan^{-1}(y/x) \).
+    </p>
+    <p>
+        Tvinntölur hafa fjölmarga eiginleika sem gera þær að ómissandi verkfæri í flóknum útreikningum. Margföldun tvinntalna má túlka sem snúning og teygju í tvinntalnaplaninu. Með formúlunni \( z_1 \cdot z_2 = |z_1||z_2| e^{i(\theta_1 + \theta_2)} \) má reikna út áhrif þessarar margföldunar. Þetta gerir tvinntölur mikilvægar í straumfræði, rafmagnsverkfræði og tölvugrafík, þar sem sveiflur og bylgjur eru lýstar.
+    </p>
+    <p>
+        Að auki eru tvinntölur nauðsynlegar í lausn margliða, þar sem sumar rætur margliða geta verið ímyndaðar. Dæmi um þetta er jöfnan \( x^2 + 1 = 0 \), sem hefur lausnirnar \( x = \pm i \). Í slíkum tilvikum er ekki nóg að vinna með rauntölur, og tvinntölurnar bjóða upp á útvíkkað svið lausna.
     </p>
 
-    <h2>2. Línulegar Afleiðujöfnur</h2>
+    <h2>2. Fáguð föll</h2>
     <p>
-        Línulegar afleiðujöfnur á öðru stigi eru formlega:
-        \[
-        y'' + p(t)y' + q(t)y = g(t).
-        \]
-        Til að leysa þær:
+        Fáguð föll eru mikilvægur flokkur falla í tvinntalnagreiningu sem hafa einstaka eiginleika og hegðun. Fáguð föll eru skilgreind þannig að þau eru óendanlega margdifferentanleg og skilgreind á svæði í tvinntalnaplaninu. Þessi eiginleiki gerir þau sérlega gagnleg í greiningu á flóknum kerfum, þar sem hegðun þeirra er fullkomlega ákvörðuð með hegðun á litlum hluta skilgreiningarsvæðisins.
     </p>
-    <ul>
-        <li><b>Sérlausn:</b> Finndu eina lausn með því að giska eða nota taflnaformúlur.</li>
-        <li><b>Stiglækkun:</b> Ef \( y_1(t) \) er lausn, þá er \( y_2(t) = v(t)y_1(t) \), þar sem \( v(t) \) er fundið úr:
-            \[
-            v' + p(t)v = 0.
-            \]
-        </li>
-    </ul>
-    <p><b>Dæmi:</b> Lausn \( t^2 y'' - 2ty' + 2y = 0 \), með \( y_1(t) = t \):</p>
     <p>
-        Fyrst er \( w = v' \), og þú færð \( w' + 2w = 0 \). Lausnin er \( w = Ce^{-2t} \), og \( v(t) = -\frac{1}{t} \), sem gefur:
+        Einn af merkustu eiginleikum fágaðra falla er að þau eru skilgreind með veldaröðum. Ef \( f(z) \) er fágað í grennd við punkt \( z_0 \), þá má skrifa það sem:
         \[
-        y_2(t) = y_1(t) \cdot v(t) = t \cdot \ln(t).
+        f(z) = \sum_{n=0}^\infty a_n (z-z_0)^n,
         \]
+        þar sem stuðlarnir \( a_n \) eru ákvarðaðir með afleiðum fallsins í \( z_0 \). Þetta þýðir að fáguð föll eru ákvarðað af hegðun sinni á örlitlu svæði, sem gerir þau einstaklega fyrirsjáanleg.
+    </p>
+    <p>
+        Samfelldni og samræmi fágaðra falla gerir þau að grundvallartóli í mörgum greinum stærðfræðinnar og verkfræðinnar. Þau eru notuð til að einfalda greiningu á kerfum, þar sem hægt er að nota þeirra fáguðu eiginleika til að álykta um flæði, sveiflur og breytingar. Dæmi um fáguð föll eru veldisvísisfallið \( e^z \), lógaritmarnir \( \ln(z) \) og þríhyrningsföll á forminu \( \sin(z) \) og \( \cos(z) \), sem öll gegna grundvallarhlutverki í straumfræði, eðlisfræði og rafmagnsverkfræði.
+    </p>
+    <p>
+        Fáguð föll hafa einnig merkilega eiginleika varðandi línuheildir. Meðal annars segir Cauchy-setningin að línuheild fágaðs falls meðfram lokuðum ferli í skilgreiningarsvæðinu sé alltaf núll. Þetta veitir kraftmikil verkfæri til að reikna út og greina flæði í bæði stærðfræðilegum og hagnýtum samhengi.
     </p>
 
-    <h2>3. Laplace-ummyndun</h2>
+    <h2>3. Cauchy-setningin og Cauchy-formúlan</h2>
     <p>
-        Laplace-ummyndunin umbreytir tímafalli \( f(t) \) í tíðnisvið með:
+        Cauchy-setningin er ein af grunnstoðum tvinntalnagreiningar og lýsir merkilegum eiginleikum fágaðra falla. Setningin segir að ef \( f(z) \) er fágað á svæði \( D \) og \( \gamma \) er lokaður ferill innan \( D \), þá er línuheildin meðfram \( \gamma \) jafngild núlli:
         \[
-        F(s) = \int_0^\infty f(t)e^{-st} \, dt.
+        \oint_\gamma f(z) dz = 0.
         \]
-        Þetta gerir flóknar afleiðujöfnur auðveldar til að leysa.
+        Þessi eiginleiki gefur mikla innsýn í hegðun fágaðra falla og gerir kleift að reikna línuheildir með ótrúlegum einfaldleika.
     </p>
-    <p><b>Dæmi:</b> Lausn \( y'' + y = \cos(t) \), með \( y(0) = 0 \), \( y'(0) = 1 \):
+    <p>
+        Afleiðing Cauchy-setningarinnar er Cauchy-formúlan, sem segir að gildi fágaðs falls innan ferlisins \( \gamma \) má reikna út frá gildum fallsins á ferlinum sjálfum:
         \[
-        s^2 Y(s) - s - 1 + Y(s) = \frac{s}{s^2+1}.
+        f(a) = \frac{1}{2\pi i} \oint_\gamma \frac{f(z)}{z-a} dz.
         \]
-        Lausnin er:
+        Þessi formúla er ótrúlega gagnleg í að finna gildi fágaðs falls og veitir einnig leið til að finna afleiður þess:
         \[
-        Y(s) = \frac{s^2+1}{(s^2+1)^2}.
+        f^{(n)}(a) = \frac{n!}{2\pi i} \oint_\gamma \frac{f(z)}{(z-a)^{n+1}} dz.
         \]
+    </p>
+    <p>
+        Cauchy-setningin og Cauchy-formúlan mynda grunninn að miklu stærri kerfi í tvinntalnagreiningu, þar sem eiginleikar fágaðra falla eru nýttir til fulls. Þessar reglur hafa mikilvæga hagnýtingu í flæðisfræði, bylgjugreiningu og útreikningum þar sem kerfi með flókin gildi þurfa að vera rannsökuð.
     </p>
 
-    <h2>4. Eigingildi og Veldaraðalausnir</h2>
+    <h2>4. Leifareikningur</h2>
     <p>
-        Til að leysa fylki:
-        \[
-        A^2 - 2A = 0.
-        \]
-        Finndu margliðulausn \( e^{tA} \):
-        \[
-        e^{tA} = I + tA + \frac{t^2}{2}A^2.
-        \]
-        Fyrir eigingildi:
-        \[
-        \det(B - \lambda I) = 0.
-        \]
-        Notaðu þessa eiginleika til að leysa samverkandi vandamál.
+        Leifareikningur er tækni í tvinntalnagreiningu sem gerir kleift að reikna út línuheildir í kringum sérstöðupunkta fágaðs falls. Sérstöðupunktar eru staðir þar sem fallið annaðhvort verður óskilgreint eða tekur óendanleg gildi. Leifar, sem eru kjarninn í leifareikningi, eru magn sem lýsir hvernig fallið hegðar sér í kringum slíkan punkt.
     </p>
+    <p>
+        Með því að nota leifasetninguna er hægt að einfalda flókna útreikninga með því að einbeita sér að hegðun fallsins nálægt sérstöðupunktum. Leifasetningin segir að ef \( f(z) \) hefur sérstöðupunkta innan lokaðs ferlis \( \gamma \), þá er línuheildin meðfram \( \gamma \):
+        \[
+        \oint_\gamma f(z) dz = 2\pi i \sum \text{Res}(f, a_k),
+        \]
+        þar sem \( \text{Res}(f, a_k) \) er leif fallsins í sérstöðupunktinum \( a_k \).
+    </p>
+    <p>
+        Leifareikningur hefur mikilvægar hagnýtingar í flæðisfræði, rafmagnsverkfræði og sveiflugreiningu, þar sem hann gerir mögulegt að greina flæði og breytingar í flóknum kerfum með einföldum verkfærum.
+    </p>
+
 </body>
 </html>
