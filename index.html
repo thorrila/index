@@ -1,158 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Stærðfræðigreining III - Glossary</title>
+    <title>Stærðfræðigreining III - Glósur</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        h1 {
-            text-align: center;
-            color: #222;
-            padding: 20px;
-            background: #007BFF;
-            color: white;
-            margin: 0;
-        }
-        h2 {
-            color: #007BFF;
-            margin-top: 30px;
-        }
-        p {
-            margin: 10px 0;
-        }
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-        ul li {
-            margin: 10px 0;
-        }
-        .topic-link {
-            font-weight: bold;
-            font-size: 1.1em;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            display: inline-block;
-            background: #f9f9f9;
-            transition: background-color 0.3s;
-        }
-        .topic-link:hover {
-            background: #e6e6e6;
-        }
-        .content-section {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        .back-to-top {
-            margin-top: 20px;
-            display: block;
-            text-align: center;
-            font-size: 0.9em;
-        }
-    </style>
 </head>
 <body>
-    <h1>Stærðfræðigreining III - Glossary</h1>
+    <h1>Stærðfræðigreining III - Glósur</h1>
 
-    <div class="content-section">
-        <p>Welcome to this glossary for Stærðfræðigreining III (Mathematical Analysis III). Here, you'll find intuitive explanations for core topics, blending mathematical precision with human-friendly language.</p>
-        <p>Select a topic to explore more:</p>
-        <ul>
-            <li><a href="#tvinntolur" class="topic-link">Tvinntölur (Complex Numbers)</a></li>
-            <li><a href="#fagud-foll" class="topic-link">Fáguð föll (Analytic Functions)</a></li>
-            <li><a href="#cauchy" class="topic-link">Cauchy-setningin (Cauchy's Theorem)</a></li>
-            <li><a href="#leifareikningur" class="topic-link">Leifareikningur (Residue Calculus)</a></li>
-            <li><a href="#laplace" class="topic-link">Laplace-ummyndunin (Laplace Transform)</a></li>
-        </ul>
-    </div>
+    <h2>Tvinntölur</h2>
+    <p>
+        Tvinntölur eru útrás fyrir stærðfræðilega tjáningu sem fer út fyrir takmörk rauntalnanna. Í raun tölum við um tölur sem hafa tvo hluta: einn hlut sem er raunverulegur og annar sem er ímyndaður. Þetta er skrifað sem \( z = x + yi \), þar sem \( x \) er raunhlutinn, \( y \) er ímyndaði hlutinn, og \( i \) er \( i^2 = -1 \). En hvað þýðir þetta? Jú, \( i \) er eins konar "snúningur" í tölfræðilegum heimi sem hjálpar okkur að leysa vandamál sem rauntölur ráða ekki við.
+    </p>
+    <p>
+        Tvinntölur eru notaðar í mörgum greinum, eins og rafmagnsverkfræði og straumfræði, þar sem þær hjálpa til við að lýsa bylgjuhreyfingum og sveiflum. Þær eru líka grundvallarverkfæri í því að finna rætur margliða sem annars væru óleysanlegar með rauntölum. Þær bjóða einnig upp á hugmyndafræðilega tengingu milli línulegra algebra og hreyfingarfræði.
+    </p>
+    <p><b>Dæmi:</b><br>
+        Finndu lengdina og hornið fyrir \( z = 3 + 4i \).<br>
+        Lengdin er \( |z| = \sqrt{x^2 + y^2} = \sqrt{3^2 + 4^2} = 5 \).<br>
+        Hornið er \( \theta = \tan^{-1}\left(\frac{y}{x}\right) = \tan^{-1}\left(\frac{4}{3}\right) \approx 53^\circ \).
+    </p>
+    <p><b>Algengt vandamál:</b> Margir rugla tvinntölur saman við venjulega vísa. Tvinntölur hafa sérstaka margföldun þar sem \( i^2 = -1 \), sem gefur þeim einstaka eiginleika.</p>
 
-    <div class="content-section" id="tvinntolur">
-        <h2>Tvinntölur (Complex Numbers)</h2>
-        <p>
-            Imagine numbers that go beyond the number line. Complex numbers are like points on a plane, with a real part (the x-axis) and an imaginary part (the y-axis). They're written as \( z = x + yi \), where \( i \) is a mysterious number satisfying \( i^2 = -1 \).
-        </p>
-        <p>
-            Why do we care about these numbers? Because they unlock powerful ways to solve problems, like finding roots of equations that real numbers can't handle. For example, the equation \( x^2 + 1 = 0 \) has no solution in real numbers, but in the complex world, it's easy: \( x = \pm i \).
-        </p>
-        <p>
-            Complex numbers also let us elegantly describe rotations and oscillations. Think of Euler's formula: \( e^{i\theta} = \cos\theta + i\sin\theta \). This beauty connects geometry, algebra, and calculus.
-        </p>
-        <a href="#top" class="back-to-top">Back to Top</a>
-    </div>
+    <h2>Fáguð föll</h2>
+    <p>
+        Fáguð föll, eða "analytic functions," eru grunnstoðir tvinntalnagreiningar. Þessi föll eru skilgreind á þann hátt að þau eru bæði óendanlega margdifferentanleg og hægt að tákna þau með veldaröðum. Þetta þýðir að ef við vitum hvernig fallið hegðar sér á einum stað, þá getum við reiknað hegðun þess alls staðar á skilgreiningarsvæðinu.
+    </p>
+    <p>
+        Til hvers eru þau notuð? Fáguð föll eru notuð í alls konar fræðum: rafmagnsverkfræði, straumfræði, tölfræðilegri hreyfifræði og jafnvel tölvugrafík. Þau gera mögulegt að skilja flókin kerfi með einfaldari tólum.
+    </p>
+    <p><b>Dæmi:</b><br>
+        Ef \( f(z) = z^2 \), þá er það fágað. Það hefur veldaröð \( f(z) = z^2 \), þar sem allir stuðlar fyrir utan \( a_2 = 1 \) og \( a_0 = 0 \) eru núll.
+    </p>
+    <p><b>Vandamál:</b> Það getur verið erfitt að skilja muninn á fáguðu falli og einföldu samfelldu falli. Mikilvægast er að muna að fáguð föll þurfa að vera óendanlega margdifferentanleg.</p>
 
-    <div class="content-section" id="fagud-foll">
-        <h2>Fáguð föll (Analytic Functions)</h2>
-        <p>
-            What makes a function "fágud" (analytic)? It's like being the ultimate smooth operator in mathematics. An analytic function is infinitely differentiable and has a power series representation, meaning it can be written as \( f(z) = \sum_{n=0}^\infty a_n (z - z_0)^n \).
-        </p>
-        <p>
-            Analytic functions are the heart of complex analysis. They behave predictably and have incredible properties, like the fact that knowing their behavior on a tiny patch determines them everywhere. This is why they're called "analytic"—it's all about being able to analyze them fully.
-        </p>
-        <a href="#top" class="back-to-top">Back to Top</a>
-    </div>
+    <h2>Cauchy-setningin</h2>
+    <p>
+        Cauchy-setningin er einn af hornsteinum tvinntalnagreiningar. Hún segir að ef þú ert með lokaða lykkju í skilgreiningarsvæði fágaðs falls, þá er línuheild fallsins meðfram lykkjunni jafnt núll. Þetta er ekki aðeins fallegt, heldur hefur það ótal beitingar. Með því að vita að línuheildir eru núll getum við byggt öflug verkfæri eins og Cauchy-formúluna.
+    </p>
+    <p>
+        Þetta er notað til að reikna línuheildir á auðveldari hátt, en líka til að sanna ýmsar aðrar stærðfræðireglur. Þetta tengir einnig flæði innan og utan lykkju, sem hefur beitingu í straumfræði og hönnun á rafrásum.
+    </p>
+    <p><b>Dæmi:</b><br>
+        Ef \( f(z) = z^2 \) og lykkjan \( \gamma \) er hringur um \( z = 0 \), þá er \( \oint_\gamma f(z) \, dz = 0 \), því \( f(z) \) hefur enga sérstöðupunkta.
+    </p>
 
-    <div class="content-section" id="cauchy">
-        <h2>Cauchy-setningin (Cauchy's Theorem)</h2>
-        <p>
-            Cauchy's theorem is the magician's hat of complex analysis: it pulls amazing results out of seemingly simple assumptions. It says that if a function \( f(z) \) is analytic in a region and you integrate it around a closed loop in that region, the result is zero:
-            \[
-            \oint_\gamma f(z) \, dz = 0
-            \]
-        </p>
-        <p>
-            This means analytic functions are "conservative"—no net change happens when you loop around. From this, you get magical results like the Cauchy integral formula, which tells you the value of \( f(z) \) anywhere inside the loop just from its values on the loop. It's the ultimate recycling principle of math!
-        </p>
-        <a href="#top" class="back-to-top">Back to Top</a>
-    </div>
+    <h2>Leifareikningur</h2>
+    <p>
+        Leifareikningur er eins og nákvæmur töframælir fyrir línuheildir í kringum sérstöðupunkta. Hugmyndin er að leifar geyma allar mikilvægar upplýsingar um hegðun falls í nágrenni sérstöðupunkts. Með leifasetningunni getum við reiknað línuheildir í kringum sérstöðupunkta með mikilli nákvæmni:
+        \[
+        \oint_\gamma f(z) \, dz = 2\pi i \sum \text{Res}(f, a_k),
+        \]
+        þar sem summan er tekin yfir allar leifar innan lykkjunnar.
+    </p>
+    <p>
+        Þetta er sérstaklega gagnlegt í raunheimum, eins og í skiptigreiningu rafrása, þar sem flókin heild getur verið einfölduð með hjálp leifanna.
+    </p>
+    <p><b>Dæmi:</b><br>
+        Heildaðu \( \oint_\gamma \frac{1}{z-1} \, dz \), þar sem lykkjan \( \gamma \) umlykur \( z = 1 \). Útkoman er \( 2\pi i \times 1 = 2\pi i \).
+    </p>
 
-    <div class="content-section" id="leifareikningur">
-        <h2>Leifareikningur (Residue Calculus)</h2>
-        <p>
-            Residues are like the essence of a function near a singularity (a "problematic" point). They make calculating integrals much simpler. The residue theorem tells you:
-            \[
-            \oint_\gamma f(z) \, dz = 2\pi i \sum \text{Res}(f, a_k)
-            \]
-            where the sum runs over all singularities inside the loop.
-        </p>
-        <p>
-            Why is this cool? Because it simplifies complicated real integrals into bite-sized calculations using the residues of the function.
-        </p>
-        <a href="#top" class="back-to-top">Back to Top</a>
-    </div>
-
-    <div class="content-section" id="laplace">
-        <h2>Laplace-ummyndunin (Laplace Transform)</h2>
-        <p>
-            The Laplace transform is like a teleportation device for functions. It converts a function of time, \( f(t) \), into a function of a complex variable, \( F(s) \):
-            \[
-            F(s) = \int_0^\infty f(t) e^{-st} \, dt
-            \]
-        </p>
-        <p>
-            Why do this? Because it turns differential equations into algebraic ones, which are much easier to solve. After solving, you use the inverse Laplace transform to return to the original time domain.
-        </p>
-        <a href="#top" class="back-to-top">Back to Top</a>
-    </div>
+    <h2>Laplace-ummyndunin</h2>
+    <p>
+        Laplace-ummyndunin er tól sem umbreytir tímaferlum í tíðniheima. Þetta gerir flóknar afleiðujöfnur auðveldari með því að breyta þeim í einfaldar algebrujöfnur. Grunnformúlan er:
+        \[
+        F(s) = \int_0^\infty f(t)e^{-st} \, dt.
+        \]
+        Þetta er mikið notað í verkfræði til að greina flókin kerfi eins og rafrásir, vélbúnað og varmaflæði.
+    </p>
+    <p>
+        Þegar við erum búin að leysa jöfnuna í tíðniheimi, getum við notað andhverfu Laplace-ummyndunina til að fara aftur í tímaheiminn og fá lausnina.
+    </p>
+    <p><b>Dæmi:</b><br>
+        Ef \( f(t) = e^{-2t} \), þá er Laplace-ummyndunin \( F(s) = \frac{1}{s+2} \).</p>
 </body>
 </html>
