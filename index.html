@@ -7,13 +7,26 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        h1, h2 {
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
             color: #333;
         }
+        h1 {
+            text-align: center;
+            color: #222;
+            padding: 20px;
+            background: #007BFF;
+            color: white;
+            margin: 0;
+        }
         h2 {
-            margin-top: 20px;
+            color: #007BFF;
+            margin-top: 30px;
+        }
+        p {
+            margin: 10px 0;
         }
         a {
             color: #007BFF;
@@ -22,87 +35,124 @@
         a:hover {
             text-decoration: underline;
         }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        ul li {
+            margin: 10px 0;
+        }
         .topic-link {
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: inline-block;
+            background: #f9f9f9;
+            transition: background-color 0.3s;
+        }
+        .topic-link:hover {
+            background: #e6e6e6;
+        }
+        .content-section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
         .back-to-top {
             margin-top: 20px;
-            display: inline-block;
-            color: #555;
+            display: block;
+            text-align: center;
             font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-    <h1>Glósur fyrir stærðfræðigreiningu III</h1>
-    <p>Veldu efni:</p>
-    <ul>
-        <li><a href="#tvinntolur" class="topic-link">Tvinntölur</a></li>
-        <li><a href="#fagud-foll" class="topic-link">Fáguð föll</a></li>
-        <li><a href="#cauchy" class="topic-link">Cauchy-setningin og Cauchy-formúlan</a></li>
-        <li><a href="#leifareikningur" class="topic-link">Leifareikningur</a></li>
-        <li><a href="#thyjd-foll" class="topic-link">Þýð föll og fágaðar varpanir</a></li>
-        <li><a href="#afleidujofnur" class="topic-link">Undirstöðuatriði um afleiðujöfnur</a></li>
-        <li><a href="#linulegar-afleidujofnur" class="topic-link">Línulegar afleiðujöfnur</a></li>
-        <li><a href="#veldaradalausnir" class="topic-link">Veldaraðalausnir á afleiðujöfnum</a></li>
-        <li><a href="#linuleg-afleidujofnuhneppi" class="topic-link">Línuleg afleiðujöfnuhneppi</a></li>
-        <li><a href="#laplace" class="topic-link">Laplace-ummyndunin</a></li>
-    </ul>
+    <h1>Stærðfræðigreining III - Glossary</h1>
 
-    <h2 id="tvinntolur">Tvinntölur</h2>
-    <p>
-        Tvinntölur eru tölur á forminu \( z = x + yi \), þar sem \( x \) og \( y \) eru rauntölur og \( i \) er skilgreint sem \( i^2 = -1 \).
-        <br>Dæmi: \( z = 3 + 4i \), þar sem \( x = 3 \), \( y = 4 \).
-    </p>
+    <div class="content-section">
+        <p>Welcome to this glossary for Stærðfræðigreining III (Mathematical Analysis III). Here, you'll find intuitive explanations for core topics, blending mathematical precision with human-friendly language.</p>
+        <p>Select a topic to explore more:</p>
+        <ul>
+            <li><a href="#tvinntolur" class="topic-link">Tvinntölur (Complex Numbers)</a></li>
+            <li><a href="#fagud-foll" class="topic-link">Fáguð föll (Analytic Functions)</a></li>
+            <li><a href="#cauchy" class="topic-link">Cauchy-setningin (Cauchy's Theorem)</a></li>
+            <li><a href="#leifareikningur" class="topic-link">Leifareikningur (Residue Calculus)</a></li>
+            <li><a href="#laplace" class="topic-link">Laplace-ummyndunin (Laplace Transform)</a></li>
+        </ul>
+    </div>
 
-    <h2 id="fagud-foll">Fáguð föll</h2>
-    <p>
-        Fáguð föll eru samfelld föll með sérstöðu í stærðfræðigreiningu. Þau eru skilgreind með markgildi og veldaraða.
-        <br>Dæmi: \( e^z \) og \( \ln(z) \).
-    </p>
+    <div class="content-section" id="tvinntolur">
+        <h2>Tvinntölur (Complex Numbers)</h2>
+        <p>
+            Imagine numbers that go beyond the number line. Complex numbers are like points on a plane, with a real part (the x-axis) and an imaginary part (the y-axis). They're written as \( z = x + yi \), where \( i \) is a mysterious number satisfying \( i^2 = -1 \).
+        </p>
+        <p>
+            Why do we care about these numbers? Because they unlock powerful ways to solve problems, like finding roots of equations that real numbers can't handle. For example, the equation \( x^2 + 1 = 0 \) has no solution in real numbers, but in the complex world, it's easy: \( x = \pm i \).
+        </p>
+        <p>
+            Complex numbers also let us elegantly describe rotations and oscillations. Think of Euler's formula: \( e^{i\theta} = \cos\theta + i\sin\theta \). This beauty connects geometry, algebra, and calculus.
+        </p>
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </div>
 
-    <h2 id="cauchy">Cauchy-setningin og Cauchy-formúlan</h2>
-    <p>
-        Cauchy-setningin segir að ef \( f(z) \) er fágað og skilgreint á svæði \( D \), þá er línuheild yfir \( f(z) \) jafnt og 0 á lokuðum ferli innan \( D \).
-    </p>
+    <div class="content-section" id="fagud-foll">
+        <h2>Fáguð föll (Analytic Functions)</h2>
+        <p>
+            What makes a function "fágud" (analytic)? It's like being the ultimate smooth operator in mathematics. An analytic function is infinitely differentiable and has a power series representation, meaning it can be written as \( f(z) = \sum_{n=0}^\infty a_n (z - z_0)^n \).
+        </p>
+        <p>
+            Analytic functions are the heart of complex analysis. They behave predictably and have incredible properties, like the fact that knowing their behavior on a tiny patch determines them everywhere. This is why they're called "analytic"—it's all about being able to analyze them fully.
+        </p>
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </div>
 
-    <h2 id="leifareikningur">Leifareikningur</h2>
-    <p>
-        Leifareikningur felst í að nota Laurent-raðir til að reikna línuheildir.
-        <br>Dæmi: Leifasetningin \( \text{Res}(f, a) \).
-    </p>
+    <div class="content-section" id="cauchy">
+        <h2>Cauchy-setningin (Cauchy's Theorem)</h2>
+        <p>
+            Cauchy's theorem is the magician's hat of complex analysis: it pulls amazing results out of seemingly simple assumptions. It says that if a function \( f(z) \) is analytic in a region and you integrate it around a closed loop in that region, the result is zero:
+            \[
+            \oint_\gamma f(z) \, dz = 0
+            \]
+        </p>
+        <p>
+            This means analytic functions are "conservative"—no net change happens when you loop around. From this, you get magical results like the Cauchy integral formula, which tells you the value of \( f(z) \) anywhere inside the loop just from its values on the loop. It's the ultimate recycling principle of math!
+        </p>
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </div>
 
-    <h2 id="thyjd-foll">Þýð föll og fágaðar varpanir</h2>
-    <p>
-        Þýð föll eru fáguð föll sem hægt er að varpa á önnur form með línulegum vörpum. Þau hafa margar hagnýtingar í straumfræði.
-    </p>
+    <div class="content-section" id="leifareikningur">
+        <h2>Leifareikningur (Residue Calculus)</h2>
+        <p>
+            Residues are like the essence of a function near a singularity (a "problematic" point). They make calculating integrals much simpler. The residue theorem tells you:
+            \[
+            \oint_\gamma f(z) \, dz = 2\pi i \sum \text{Res}(f, a_k)
+            \]
+            where the sum runs over all singularities inside the loop.
+        </p>
+        <p>
+            Why is this cool? Because it simplifies complicated real integrals into bite-sized calculations using the residues of the function.
+        </p>
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </div>
 
-    <h2 id="afleidujofnur">Undirstöðuatriði um afleiðujöfnur</h2>
-    <p>
-        Afleiðujöfnur skilgreina samband milli falls og afleiðu þess. Lausnir geta verið nákvæmar eða nálgunarlausnir.
-    </p>
-
-    <h2 id="linulegar-afleidujofnur">Línulegar afleiðujöfnur</h2>
-    <p>
-        Línulegar afleiðujöfnur eru í formi \( a_n(x)y^{(n)} + \ldots + a_0(x)y = g(x) \), þar sem \( a_i(x) \) eru föll.
-    </p>
-
-    <h2 id="veldaradalausnir">Veldaraðalausnir á afleiðujöfnum</h2>
-    <p>
-        Aðferð Frobeniusar er notuð til að leysa afleiðujöfnur með veldaröðum.
-    </p>
-
-    <h2 id="linuleg-afleidujofnuhneppi">Línuleg afleiðujöfnuhneppi</h2>
-    <p>
-        Lausnir hneppa eru oft fundnar með fylkjareikningi, þar með talið veldisvísisfylkið.
-    </p>
-
-    <h2 id="laplace">Laplace-ummyndunin</h2>
-    <p>
-        Laplace-ummyndunin er tól til að breyta afleiðujöfnum í algebrujöfnur sem auðvelt er að leysa.
-    </p>
-
-    <a href="#top" class="back-to-top">Til baka á toppinn</a>
+    <div class="content-section" id="laplace">
+        <h2>Laplace-ummyndunin (Laplace Transform)</h2>
+        <p>
+            The Laplace transform is like a teleportation device for functions. It converts a function of time, \( f(t) \), into a function of a complex variable, \( F(s) \):
+            \[
+            F(s) = \int_0^\infty f(t) e^{-st} \, dt
+            \]
+        </p>
+        <p>
+            Why do this? Because it turns differential equations into algebraic ones, which are much easier to solve. After solving, you use the inverse Laplace transform to return to the original time domain.
+        </p>
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </div>
 </body>
 </html>
