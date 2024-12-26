@@ -2,77 +2,78 @@
 <html>
 <head>
     <title>Stærðfræðigreining III - Glósur</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <h1>Stærðfræðigreining III - Glósur</h1>
 
     <h2>1. Tvinntölur</h2>
     <p>
-        Tvinntölur eru stærðfræðileg útvíkkun á rauntölum sem gera kleift að vinna með stærðir sem hafa bæði raunverulegan og ímyndaðan hluta. Þær eru skrifaðar á forminu \( z = x + yi \), þar sem \( x \) er raunhlutinn og \( y \) er ímyndaði hlutinn. Ímynduð eining, táknuð sem \( i \), er skilgreind þannig að \( i^2 = -1 \). Með þessari skilgreiningu má lýsa mörgum stærðfræðilegum og verkfræðilegum ferlum á flóknari hátt en með rauntölum einum saman. Tvinntölur eru grunneining í tvinntalnagreiningu og hafa mikilvægar tengingar við hringhreyfingar, bylgjujöfnur og sveiflur í raunheimi.
+        Alright, here’s the deal with tvinntölur (complex numbers). They’re just numbers that have two parts: a real part (the usual numbers you know) and an imaginary part (which sounds fake, but it’s very real in math terms). These numbers look like \( z = x + yi \), where \( x \) is the real part and \( y \) is the imaginary part. The \( i \) here stands for the "imaginary unit" and satisfies \( i^2 = -1 \). So yeah, imaginary numbers aren’t just for sci-fi—they’re a core part of math.
     </p>
     <p>
-        Geometrískt má túlka tvinntölur sem punkta á tvinntalnaplani, þar sem \( x \)-ásinn táknar raunhlutann og \( y \)-ásinn táknar ímyndaða hlutann. Lengd tvinntölu, kölluð norm, er reiknuð sem \( |z| = \sqrt{x^2 + y^2} \), og hún lýsir fjarlægð punktsins \( z \) frá upphafspunktinum. Hornið \( \theta \), sem tvinntalan myndar við jákvæða \( x \)-ásinn, er kallað vigurhorn hennar og er reiknað sem \( \tan^{-1}(y/x) \).
+        Geometrically, tvinntölur live in their own plane called the complex plane. Imagine a graph: the x-axis is the real part, and the y-axis is the imaginary part. Each complex number \( z = x + yi \) is a point on this plane. Want to know how far it is from the origin? Just use \( |z| = \sqrt{x^2 + y^2} \), which is called the "modulus" or "absolute value." The angle it makes with the x-axis is called the "argument" and can be found with \( \theta = \tan^{-1}\left(\frac{y}{x}\right) \).
     </p>
     <p>
-        Tvinntölur hafa fjölmarga eiginleika sem gera þær að ómissandi verkfæri í flóknum útreikningum. Margföldun tvinntalna má túlka sem snúning og teygju í tvinntalnaplaninu. Með formúlunni \( z_1 \cdot z_2 = |z_1||z_2| e^{i(\theta_1 + \theta_2)} \) má reikna út áhrif þessarar margföldunar. Þetta gerir tvinntölur mikilvægar í straumfræði, rafmagnsverkfræði og tölvugrafík, þar sem sveiflur og bylgjur eru lýstar.
+        But what’s the point of all this? Well, tvinntölur are incredibly useful. They’re used in everything from electrical engineering to quantum physics. They’re especially handy when dealing with oscillations, rotations, and waves. For example, if you multiply two complex numbers, it’s like rotating and scaling them in the complex plane. This makes them amazing for describing things like sound waves, alternating current in circuits, or even vibrations.
     </p>
     <p>
-        Að auki eru tvinntölur nauðsynlegar í lausn margliða, þar sem sumar rætur margliða geta verið ímyndaðar. Dæmi um þetta er jöfnan \( x^2 + 1 = 0 \), sem hefur lausnirnar \( x = \pm i \). Í slíkum tilvikum er ekki nóg að vinna með rauntölur, og tvinntölurnar bjóða upp á útvíkkað svið lausna.
+        One of the coolest things about tvinntölur is their connection to Euler’s formula:
+        \[
+        e^{i\theta} = \cos(\theta) + i\sin(\theta).
+        \]
+        This little gem ties together exponentials, trigonometry, and complex numbers in one elegant package. It’s like the Swiss Army knife of math.
+    </p>
+    <p>
+        Tvinntölur also let us solve equations that are impossible with just real numbers. Take \( x^2 + 1 = 0 \), for example. There’s no real number solution, but in the world of tvinntölur, it’s easy: \( x = \pm i \). They’re also the key to solving all polynomial equations (shoutout to the Fundamental Theorem of Algebra).
+    </p>
+    <p>
+        So yeah, tvinntölur might seem weird at first, but they’re everywhere. If you’re into engineering, physics, or just cool math, you’ll be using them a lot. Plus, they make boring equations way more interesting.
     </p>
 
     <h2>2. Fáguð föll</h2>
     <p>
-        Fáguð föll eru mikilvægur flokkur falla í tvinntalnagreiningu sem hafa einstaka eiginleika og hegðun. Fáguð föll eru skilgreind þannig að þau eru óendanlega margdifferentanleg og skilgreind á svæði í tvinntalnaplaninu. Þessi eiginleiki gerir þau sérlega gagnleg í greiningu á flóknum kerfum, þar sem hegðun þeirra er fullkomlega ákvörðuð með hegðun á litlum hluta skilgreiningarsvæðisins.
+        Fáguð föll, or analytic functions, are like the perfectionists of the math world. These are functions that behave super predictably and smoothly—they’re differentiable not just once, but infinitely many times. They’re basically the "good guys" of tvinntalnagreining (complex analysis).
     </p>
     <p>
-        Einn af merkustu eiginleikum fágaðra falla er að þau eru skilgreind með veldaröðum. Ef \( f(z) \) er fágað í grennd við punkt \( z_0 \), þá má skrifa það sem:
+        The coolest thing about fáguð föll is that you can represent them with power series. That means if \( f(z) \) is analytic at \( z_0 \), you can write it as:
         \[
-        f(z) = \sum_{n=0}^\infty a_n (z-z_0)^n,
+        f(z) = \sum_{n=0}^\infty a_n (z-z_0)^n.
         \]
-        þar sem stuðlarnir \( a_n \) eru ákvarðaðir með afleiðum fallsins í \( z_0 \). Þetta þýðir að fáguð föll eru ákvarðað af hegðun sinni á örlitlu svæði, sem gerir þau einstaklega fyrirsjáanleg.
+        This is huge because it means you can know everything about the function just by looking at its behavior near \( z_0 \). No surprises here.
     </p>
     <p>
-        Samfelldni og samræmi fágaðra falla gerir þau að grundvallartóli í mörgum greinum stærðfræðinnar og verkfræðinnar. Þau eru notuð til að einfalda greiningu á kerfum, þar sem hægt er að nota þeirra fáguðu eiginleika til að álykta um flæði, sveiflur og breytingar. Dæmi um fáguð föll eru veldisvísisfallið \( e^z \), lógaritmarnir \( \ln(z) \) og þríhyrningsföll á forminu \( \sin(z) \) og \( \cos(z) \), sem öll gegna grundvallarhlutverki í straumfræði, eðlisfræði og rafmagnsverkfræði.
+        Why do we care? Because fáguð föll are the foundation for almost all of complex analysis. They’re used to describe physical phenomena like fluid flow, electromagnetic fields, and even heat distribution. Plus, they’ve got amazing properties, like how they let you calculate integrals in super-easy ways using Cauchy’s theorems (more on that later).
     </p>
     <p>
-        Fáguð föll hafa einnig merkilega eiginleika varðandi línuheildir. Meðal annars segir Cauchy-setningin að línuheild fágaðs falls meðfram lokuðum ferli í skilgreiningarsvæðinu sé alltaf núll. Þetta veitir kraftmikil verkfæri til að reikna út og greina flæði í bæði stærðfræðilegum og hagnýtum samhengi.
+        Another thing: analytic functions are either 100% smooth and predictable or they blow up in your face (at singularities). But even when they blow up, we can still learn a lot from them. That’s where stuff like residues and poles come in, but we’ll get to that.
+    </p>
+    <p>
+        Examples of fáguð föll include \( e^z \), \( \ln(z) \), and \( \sin(z) \). These are functions you already know, but in the complex world, they have even cooler properties. For example, the exponential function doesn’t just describe growth—it also describes rotations (thanks again to \( e^{i\theta} = \cos(\theta) + i\sin(\theta) \)).
+    </p>
+    <p>
+        So yeah, fáguð föll are like the MVPs of math. They’re smooth, predictable, and incredibly useful in both pure and applied mathematics.
     </p>
 
-    <h2>3. Cauchy-setningin og Cauchy-formúlan</h2>
+    <h2>3. Afleiðujöfnur</h2>
     <p>
-        Cauchy-setningin er ein af grunnstoðum tvinntalnagreiningar og lýsir merkilegum eiginleikum fágaðra falla. Setningin segir að ef \( f(z) \) er fágað á svæði \( D \) og \( \gamma \) er lokaður ferill innan \( D \), þá er línuheildin meðfram \( \gamma \) jafngild núlli:
-        \[
-        \oint_\gamma f(z) dz = 0.
-        \]
-        Þessi eiginleiki gefur mikla innsýn í hegðun fágaðra falla og gerir kleift að reikna línuheildir með ótrúlegum einfaldleika.
+        Afleiðujöfnur, or differential equations, are equations that involve a function and its derivatives. These are the bread and butter of anything involving change—whether it’s the speed of a car, the flow of water, or the spread of a disease. If something changes over time or space, you can bet there’s an afleiðujafna describing it.
     </p>
     <p>
-        Afleiðing Cauchy-setningarinnar er Cauchy-formúlan, sem segir að gildi fágaðs falls innan ferlisins \( \gamma \) má reikna út frá gildum fallsins á ferlinum sjálfum:
-        \[
-        f(a) = \frac{1}{2\pi i} \oint_\gamma \frac{f(z)}{z-a} dz.
-        \]
-        Þessi formúla er ótrúlega gagnleg í að finna gildi fágaðs falls og veitir einnig leið til að finna afleiður þess:
-        \[
-        f^{(n)}(a) = \frac{n!}{2\pi i} \oint_\gamma \frac{f(z)}{(z-a)^{n+1}} dz.
-        \]
+        There are two main types: ordinary differential equations (ODEs) and partial differential equations (PDEs). ODEs involve functions of a single variable, like \( y'(t) + y(t) = 0 \), while PDEs involve functions of multiple variables, like \( u_{xx} + u_{yy} = 0 \). Both are super important, but ODEs are usually the starting point.
     </p>
     <p>
-        Cauchy-setningin og Cauchy-formúlan mynda grunninn að miklu stærri kerfi í tvinntalnagreiningu, þar sem eiginleikar fágaðra falla eru nýttir til fulls. Þessar reglur hafa mikilvæga hagnýtingu í flæðisfræði, bylgjugreiningu og útreikningum þar sem kerfi með flókin gildi þurfa að vera rannsökuð.
-    </p>
-
-    <h2>4. Leifareikningur</h2>
-    <p>
-        Leifareikningur er tækni í tvinntalnagreiningu sem gerir kleift að reikna út línuheildir í kringum sérstöðupunkta fágaðs falls. Sérstöðupunktar eru staðir þar sem fallið annaðhvort verður óskilgreint eða tekur óendanleg gildi. Leifar, sem eru kjarninn í leifareikningi, eru magn sem lýsir hvernig fallið hegðar sér í kringum slíkan punkt.
+        Differential equations can also be classified by their order (how many derivatives are involved), linearity (whether they’re linear or nonlinear), and whether they have constant or variable coefficients. For example, \( y'' + 3y' + 2y = 0 \) is a second-order, linear ODE with constant coefficients.
     </p>
     <p>
-        Með því að nota leifasetninguna er hægt að einfalda flókna útreikninga með því að einbeita sér að hegðun fallsins nálægt sérstöðupunktum. Leifasetningin segir að ef \( f(z) \) hefur sérstöðupunkta innan lokaðs ferlis \( \gamma \), þá er línuheildin meðfram \( \gamma \):
-        \[
-        \oint_\gamma f(z) dz = 2\pi i \sum \text{Res}(f, a_k),
-        \]
-        þar sem \( \text{Res}(f, a_k) \) er leif fallsins í sérstöðupunktinum \( a_k \).
+        So what’s the goal here? To solve the equation, meaning to find the function \( y(t) \) or \( u(x, t) \) that satisfies it. Sometimes that’s easy, but most of the time it’s a nightmare. That’s why we have special methods like separation of variables, integrating factors, and Laplace transforms.
     </p>
     <p>
-        Leifareikningur hefur mikilvægar hagnýtingar í flæðisfræði, rafmagnsverkfræði og sveiflugreiningu, þar sem hann gerir mögulegt að greina flæði og breytingar í flóknum kerfum með einföldum verkfærum.
+        One really cool thing is that solutions to linear equations can be added together. This is called the principle of superposition, and it’s a lifesaver when you’re dealing with complicated systems. For example, if \( y_1(t) \) and \( y_2(t) \) are solutions to a linear ODE, then \( c_1y_1(t) + c_2y_2(t) \) is also a solution.
+    </p>
+    <p>
+        Differential equations are everywhere. They’re used to describe population growth, electrical circuits, fluid dynamics, and so much more. If you’re solving an afleiðujafna, you’re basically modeling how something in the world behaves.
     </p>
 
 </body>
