@@ -2,20 +2,105 @@
 <html>
 <head>
     <title>Stærðfræðigreining III - Glossary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .topic-link {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .back-to-top {
+            margin-top: 20px;
+            display: inline-block;
+            color: #555;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
     <h1>Glósur fyrir stærðfræðigreiningu III</h1>
+    <p>Veldu efni:</p>
     <ul>
-        <li><a href="tvinntolur.html">Tvinntölur</a></li>
-        <li><a href="fagud-foll.html">Fáguð föll</a></li>
-        <li><a href="cauchy.html">Cauchy-setningin og Cauchy-formúlan</a></li>
-        <li><a href="leifareikningur.html">Leifareikningur</a></li>
-        <li><a href="thyjd-foll.html">Þýð föll og fágaðar varpanir</a></li>
-        <li><a href="afleidujofnur.html">Undirstöðuatriði um afleiðujöfnur</a></li>
-        <li><a href="linulegar-afleidujofnur.html">Línulegar afleiðujöfnur</a></li>
-        <li><a href="veldaradalausnir.html">Veldaraðalausnir á afleiðujöfnum</a></li>
-        <li><a href="linuleg-afleidujofnuhneppi.html">Línuleg afleiðujöfnuhneppi</a></li>
-        <li><a href="laplace.html">Laplace-ummyndunin</a></li>
+        <li><a href="#tvinntolur" class="topic-link">Tvinntölur</a></li>
+        <li><a href="#fagud-foll" class="topic-link">Fáguð föll</a></li>
+        <li><a href="#cauchy" class="topic-link">Cauchy-setningin og Cauchy-formúlan</a></li>
+        <li><a href="#leifareikningur" class="topic-link">Leifareikningur</a></li>
+        <li><a href="#thyjd-foll" class="topic-link">Þýð föll og fágaðar varpanir</a></li>
+        <li><a href="#afleidujofnur" class="topic-link">Undirstöðuatriði um afleiðujöfnur</a></li>
+        <li><a href="#linulegar-afleidujofnur" class="topic-link">Línulegar afleiðujöfnur</a></li>
+        <li><a href="#veldaradalausnir" class="topic-link">Veldaraðalausnir á afleiðujöfnum</a></li>
+        <li><a href="#linuleg-afleidujofnuhneppi" class="topic-link">Línuleg afleiðujöfnuhneppi</a></li>
+        <li><a href="#laplace" class="topic-link">Laplace-ummyndunin</a></li>
     </ul>
+
+    <h2 id="tvinntolur">Tvinntölur</h2>
+    <p>
+        Tvinntölur eru tölur á forminu \(z = x + yi\), þar sem \(x\) og \(y\) eru rauntölur og \(i\) er skilgreint sem \(i^2 = -1\).
+        Dæmi: \(z = 3 + 4i\), þar sem \(x = 3\), \(y = 4\).
+    </p>
+
+    <h2 id="fagud-foll">Fáguð föll</h2>
+    <p>
+        Fáguð föll eru samfelld föll með sérstöðu í stærðfræðigreiningu. Þau eru skilgreind með markgildi og veldaraða.
+        Dæmi: \(e^z\) og \(\ln(z)\).
+    </p>
+
+    <h2 id="cauchy">Cauchy-setningin og Cauchy-formúlan</h2>
+    <p>
+        Cauchy-setningin segir að ef \(f(z)\) er fágað og skilgreint á svæði \(D\), þá er línuheild yfir \(f(z)\) jafnt og 0 á lokuðum ferli innan \(D\).
+    </p>
+
+    <h2 id="leifareikningur">Leifareikningur</h2>
+    <p>
+        Leifareikningur felst í að nota Laurent-raðir til að reikna línuheildir.
+        Dæmi: Leifasetningin \(Res(f, a)\).
+    </p>
+
+    <h2 id="thyjd-foll">Þýð föll og fágaðar varpanir</h2>
+    <p>
+        Þýð föll eru fáguð föll sem hægt er að varpa á önnur form með línulegum vörpum. Þau hafa margar hagnýtingar í straumfræði.
+    </p>
+
+    <h2 id="afleidujofnur">Undirstöðuatriði um afleiðujöfnur</h2>
+    <p>
+        Afleiðujöfnur skilgreina samband milli falls og afleiðu þess. Lausnir geta verið nákvæmar eða nálgunarlausnir.
+    </p>
+
+    <h2 id="linulegar-afleidujofnur">Línulegar afleiðujöfnur</h2>
+    <p>
+        Línulegar afleiðujöfnur eru í formi \(a_n(x)y^{(n)} + \ldots + a_0(x)y = g(x)\), þar sem \(a_i(x)\) eru föll.
+    </p>
+
+    <h2 id="veldaradalausnir">Veldaraðalausnir á afleiðujöfnum</h2>
+    <p>
+        Aðferð Frobeniusar er notuð til að leysa afleiðujöfnur með veldaröðum.
+    </p>
+
+    <h2 id="linuleg-afleidujofnuhneppi">Línuleg afleiðujöfnuhneppi</h2>
+    <p>
+        Lausnir hneppa eru oft fundnar með fylkjareikningi, þar með talið veldisvísisfylkið.
+    </p>
+
+    <h2 id="laplace">Laplace-ummyndunin</h2>
+    <p>
+        Laplace-ummyndunin er tól til að breyta afleiðujöfnum í algebrujöfnur sem auðvelt er að leysa.
+    </p>
+
+    <a href="#top" class="back-to-top">Til baka á toppinn</a>
 </body>
 </html>
