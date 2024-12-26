@@ -1,77 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Stærðfræðigreining III - Glósur</title>
+    <title>Stærðfræðigreining III</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <h1>Stærðfræðigreining III - Glósur</h1>
 
-    <h2>Tvinntölur</h2>
+    <h2>1. Sérstöðupunktar og Leifareikningur</h2>
     <p>
-        Tvinntölur eru útrás fyrir stærðfræðilega tjáningu sem fer út fyrir takmörk rauntalnanna. Í raun tölum við um tölur sem hafa tvo hluta: einn hlut sem er raunverulegur og annar sem er ímyndaður. Þetta er skrifað sem \( z = x + yi \), þar sem \( x \) er raunhlutinn, \( y \) er ímyndaði hlutinn, og \( i \) er \( i^2 = -1 \). En hvað þýðir þetta? Jú, \( i \) er eins konar "snúningur" í tölfræðilegum heimi sem hjálpar okkur að leysa vandamál sem rauntölur ráða ekki við.
+        Sérstöðupunktar eru þar sem fall \( f(z) \) annaðhvort verður ósamfellt eða óskilgreint. Til að leysa dæmi um sérstöðupunkta, þarftu að:
     </p>
+    <ul>
+        <li><b>Finna sérstöðupunkta:</b> Finndu þá \( z \) sem valda því að \( f(z) \) er ekki skilgreint. Notaðu þáttun eða deilireglur til að greina brotin.</li>
+        <li><b>Greina gerð sérstöðupunkts:</b>
+            <ul>
+                <li><b>Afmáanlegur:</b> Ef þú getur "lagfært" punktinn með því að bæta við gildi.</li>
+                <li><b>Skaut:</b> Fallið fer á óendanlegt í punktinum. Skaut hafa stig, \( m \), sem segir hversu hratt það fer á óendanlegt.</li>
+                <li><b>Verulegur:</b> Sérstöðupunktur þar sem fallið sveiflast óendanlega nálægt punktinum.</li>
+            </ul>
+        </li>
+    </ul>
+    <p><b>Dæmi:</b> Greinum \( f(z) = \frac{z^2}{(z^2+1)^2} \):</p>
     <p>
-        Tvinntölur eru notaðar í mörgum greinum, eins og rafmagnsverkfræði og straumfræði, þar sem þær hjálpa til við að lýsa bylgjuhreyfingum og sveiflum. Þær eru líka grundvallarverkfæri í því að finna rætur margliða sem annars væru óleysanlegar með rauntölum. Þær bjóða einnig upp á hugmyndafræðilega tengingu milli línulegra algebra og hreyfingarfræði.
+        Sérstöðupunktar eru \( z^2 + 1 = 0 \), þ.e. \( z = i \) og \( z = -i \). Báðir punktar eru skaut, því fallið fer á óendanlegt í þeim.
+        <br> Stig skautanna: \( z=i \) er af stigi 2, því þegar þú skrifar \( f(z) = \frac{z^2}{(z-i)^2(z+i)^2} \), er nefnarinn \( (z-i)^2 \) í \( z=i \).
     </p>
-    <p><b>Dæmi:</b><br>
-        Finndu lengdina og hornið fyrir \( z = 3 + 4i \).<br>
-        Lengdin er \( |z| = \sqrt{x^2 + y^2} = \sqrt{3^2 + 4^2} = 5 \).<br>
-        Hornið er \( \theta = \tan^{-1}\left(\frac{y}{x}\right) = \tan^{-1}\left(\frac{4}{3}\right) \approx 53^\circ \).
-    </p>
-    <p><b>Algengt vandamál:</b> Margir rugla tvinntölur saman við venjulega vísa. Tvinntölur hafa sérstaka margföldun þar sem \( i^2 = -1 \), sem gefur þeim einstaka eiginleika.</p>
-
-    <h2>Fáguð föll</h2>
-    <p>
-        Fáguð föll, eða "analytic functions," eru grunnstoðir tvinntalnagreiningar. Þessi föll eru skilgreind á þann hátt að þau eru bæði óendanlega margdifferentanleg og hægt að tákna þau með veldaröðum. Þetta þýðir að ef við vitum hvernig fallið hegðar sér á einum stað, þá getum við reiknað hegðun þess alls staðar á skilgreiningarsvæðinu.
-    </p>
-    <p>
-        Til hvers eru þau notuð? Fáguð föll eru notuð í alls konar fræðum: rafmagnsverkfræði, straumfræði, tölfræðilegri hreyfifræði og jafnvel tölvugrafík. Þau gera mögulegt að skilja flókin kerfi með einfaldari tólum.
-    </p>
-    <p><b>Dæmi:</b><br>
-        Ef \( f(z) = z^2 \), þá er það fágað. Það hefur veldaröð \( f(z) = z^2 \), þar sem allir stuðlar fyrir utan \( a_2 = 1 \) og \( a_0 = 0 \) eru núll.
-    </p>
-    <p><b>Vandamál:</b> Það getur verið erfitt að skilja muninn á fáguðu falli og einföldu samfelldu falli. Mikilvægast er að muna að fáguð föll þurfa að vera óendanlega margdifferentanleg.</p>
-
-    <h2>Cauchy-setningin</h2>
-    <p>
-        Cauchy-setningin er einn af hornsteinum tvinntalnagreiningar. Hún segir að ef þú ert með lokaða lykkju í skilgreiningarsvæði fágaðs falls, þá er línuheild fallsins meðfram lykkjunni jafnt núll. Þetta er ekki aðeins fallegt, heldur hefur það ótal beitingar. Með því að vita að línuheildir eru núll getum við byggt öflug verkfæri eins og Cauchy-formúluna.
-    </p>
-    <p>
-        Þetta er notað til að reikna línuheildir á auðveldari hátt, en líka til að sanna ýmsar aðrar stærðfræðireglur. Þetta tengir einnig flæði innan og utan lykkju, sem hefur beitingu í straumfræði og hönnun á rafrásum.
-    </p>
-    <p><b>Dæmi:</b><br>
-        Ef \( f(z) = z^2 \) og lykkjan \( \gamma \) er hringur um \( z = 0 \), þá er \( \oint_\gamma f(z) \, dz = 0 \), því \( f(z) \) hefur enga sérstöðupunkta.
-    </p>
-
-    <h2>Leifareikningur</h2>
-    <p>
-        Leifareikningur er eins og nákvæmur töframælir fyrir línuheildir í kringum sérstöðupunkta. Hugmyndin er að leifar geyma allar mikilvægar upplýsingar um hegðun falls í nágrenni sérstöðupunkts. Með leifasetningunni getum við reiknað línuheildir í kringum sérstöðupunkta með mikilli nákvæmni:
+    <p><b>Leif:</b> Notaðu:
         \[
-        \oint_\gamma f(z) \, dz = 2\pi i \sum \text{Res}(f, a_k),
+        \text{Res}(f, i) = \lim_{z \to i} \frac{d}{dz}\left((z-i)^2 \cdot \frac{z^2}{(z^2+1)^2}\right) = \frac{i}{4i^3} = \frac{1}{4}.
         \]
-        þar sem summan er tekin yfir allar leifar innan lykkjunnar.
     </p>
     <p>
-        Þetta er sérstaklega gagnlegt í raunheimum, eins og í skiptigreiningu rafrása, þar sem flókin heild getur verið einfölduð með hjálp leifanna.
-    </p>
-    <p><b>Dæmi:</b><br>
-        Heildaðu \( \oint_\gamma \frac{1}{z-1} \, dz \), þar sem lykkjan \( \gamma \) umlykur \( z = 1 \). Útkoman er \( 2\pi i \times 1 = 2\pi i \).
+        <b>Leifasetningin:</b> Heildaðu \( \int_{-\infty}^\infty f(x) dx \) með því að nota hálfplanaferil. Línuheildin er jafngild:
+        \[
+        2\pi i \left(\sum \text{Res}(f, \text{sérstöðupunktar í efra hálfplani})\right).
+        \]
     </p>
 
-    <h2>Laplace-ummyndunin</h2>
+    <h2>2. Línulegar Afleiðujöfnur</h2>
     <p>
-        Laplace-ummyndunin er tól sem umbreytir tímaferlum í tíðniheima. Þetta gerir flóknar afleiðujöfnur auðveldari með því að breyta þeim í einfaldar algebrujöfnur. Grunnformúlan er:
+        Línulegar afleiðujöfnur á öðru stigi eru formlega:
+        \[
+        y'' + p(t)y' + q(t)y = g(t).
+        \]
+        Til að leysa þær:
+    </p>
+    <ul>
+        <li><b>Sérlausn:</b> Finndu eina lausn með því að giska eða nota taflnaformúlur.</li>
+        <li><b>Stiglækkun:</b> Ef \( y_1(t) \) er lausn, þá er \( y_2(t) = v(t)y_1(t) \), þar sem \( v(t) \) er fundið úr:
+            \[
+            v' + p(t)v = 0.
+            \]
+        </li>
+    </ul>
+    <p><b>Dæmi:</b> Lausn \( t^2 y'' - 2ty' + 2y = 0 \), með \( y_1(t) = t \):</p>
+    <p>
+        Fyrst er \( w = v' \), og þú færð \( w' + 2w = 0 \). Lausnin er \( w = Ce^{-2t} \), og \( v(t) = -\frac{1}{t} \), sem gefur:
+        \[
+        y_2(t) = y_1(t) \cdot v(t) = t \cdot \ln(t).
+        \]
+    </p>
+
+    <h2>3. Laplace-ummyndun</h2>
+    <p>
+        Laplace-ummyndunin umbreytir tímafalli \( f(t) \) í tíðnisvið með:
         \[
         F(s) = \int_0^\infty f(t)e^{-st} \, dt.
         \]
-        Þetta er mikið notað í verkfræði til að greina flókin kerfi eins og rafrásir, vélbúnað og varmaflæði.
+        Þetta gerir flóknar afleiðujöfnur auðveldar til að leysa.
     </p>
+    <p><b>Dæmi:</b> Lausn \( y'' + y = \cos(t) \), með \( y(0) = 0 \), \( y'(0) = 1 \):
+        \[
+        s^2 Y(s) - s - 1 + Y(s) = \frac{s}{s^2+1}.
+        \]
+        Lausnin er:
+        \[
+        Y(s) = \frac{s^2+1}{(s^2+1)^2}.
+        \]
+    </p>
+
+    <h2>4. Eigingildi og Veldaraðalausnir</h2>
     <p>
-        Þegar við erum búin að leysa jöfnuna í tíðniheimi, getum við notað andhverfu Laplace-ummyndunina til að fara aftur í tímaheiminn og fá lausnina.
+        Til að leysa fylki:
+        \[
+        A^2 - 2A = 0.
+        \]
+        Finndu margliðulausn \( e^{tA} \):
+        \[
+        e^{tA} = I + tA + \frac{t^2}{2}A^2.
+        \]
+        Fyrir eigingildi:
+        \[
+        \det(B - \lambda I) = 0.
+        \]
+        Notaðu þessa eiginleika til að leysa samverkandi vandamál.
     </p>
-    <p><b>Dæmi:</b><br>
-        Ef \( f(t) = e^{-2t} \), þá er Laplace-ummyndunin \( F(s) = \frac{1}{s+2} \).</p>
 </body>
 </html>
